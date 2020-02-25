@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangyxhaha.github.io</id>
     <title>WangYXHaHa</title>
-    <updated>2020-02-25T08:53:07.712Z</updated>
+    <updated>2020-02-25T08:54:12.901Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangyxhaha.github.io"/>
     <link rel="self" href="https://wangyxhaha.github.io/atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="https://wangyxhaha.github.io/post/cha-ru-pai-xu/">
         </link>
         <updated>2020-02-25T08:48:13.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=2dc70659533d26973ade000f3492d99e/bd315c6034a85edf009ac5b04b540923dd54750a.jpg" alt="" loading="lazy"></figure>
+        <content type="html"><![CDATA[<p>很常用的一种排序</p>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 using namespace std;
 
