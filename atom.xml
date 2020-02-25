@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangyxhaha.github.io</id>
     <title>WangYXHaHa</title>
-    <updated>2020-02-25T08:35:00.005Z</updated>
+    <updated>2020-02-25T08:48:54.941Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangyxhaha.github.io"/>
     <link rel="self" href="https://wangyxhaha.github.io/atom.xml"/>
@@ -10,6 +10,43 @@
     <logo>https://wangyxhaha.github.io/images/avatar.png</logo>
     <icon>https://wangyxhaha.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, WangYXHaHa</rights>
+    <entry>
+        <title type="html"><![CDATA[插入排序]]></title>
+        <id>https://wangyxhaha.github.io/post/cha-ru-pai-xu/</id>
+        <link href="https://wangyxhaha.github.io/post/cha-ru-pai-xu/">
+        </link>
+        <updated>2020-02-25T08:48:13.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=2dc70659533d26973ade000f3492d99e/bd315c6034a85edf009ac5b04b540923dd54750a.jpg" alt="" loading="lazy"></figure>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int a[10000];
+
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    for (int i=0;i&lt;n;i++){
+        cin &gt;&gt; a[i];
+    }
+    int t,j; //t储存当前取到的项的值，j储存当前比较到的项的项数
+    for (int i=1;i&lt;n;i++){ //第一个默认有序，所以从第二个开始
+        t=a[i]; //赋值
+        j=i; //赋值
+        while (j&gt;0 &amp;&amp; a[j-1]&gt;t){ //while循环向前遍历：如果当前比较到的
+            a[j]=a[j-1];         //项的前一项比当前比较到的项大，那么
+            j--;                 //前一项的值移至当前项，并当前比较到的项
+        }                        //的项数向前移；j若到0或找到前一项
+        a[j]=t;                  //小于等于当前比较到的项，跳出循环
+    }                            //并给当前比较到的项赋值为t
+    for (int i=0;i&lt;n;i++){
+        cout &lt;&lt; a[i] &lt;&lt; ' ';
+    }
+    cout &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://wangyxhaha.github.io/post/hello-gridea/</id>
