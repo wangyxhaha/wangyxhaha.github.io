@@ -1037,4 +1037,10 @@ td {
   color: #7e7cb8;
   font-weight: bold;
 }
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #90b5ec;
+  font-weight: bold;
+}
     
