@@ -1068,7 +1068,7 @@ a {
 }
 .post-detail .post .post-content a:hover {
   color: #ffffff;
-  border-bottom: 1px dotted #ffffff;
+  /*border-bottom: 1px dotted #ffffff;*/
 }
 .hljs-number {
   color: #6ce6cd;
