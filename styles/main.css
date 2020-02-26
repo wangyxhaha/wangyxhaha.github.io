@@ -1087,4 +1087,7 @@ a:hover {
 .post-container .post .post-feature-image:hover {
   border-radius: 0px;
 }
+.post-detail .post .post-content blockquote:before {
+  color: rgba(255, 255, 255, 0.34);
+}
     
