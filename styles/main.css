@@ -1056,9 +1056,14 @@ td {
   color: #e99768;
 }
 a {
-  color: ;
+  color: #ffffff;
   text-decoration: none;
+  letter-spacing: 0.02em;
   transition: all 0.3s;
+}
+a:hover {
+  color: #ffec99;
+  letter-spacing: 0.1em;
 }
 .post-detail .post .post-content a {
   color: #f9d654;
@@ -1068,9 +1073,12 @@ a {
 }
 .post-detail .post .post-content a:hover {
   color: #ffffff;
-  /*border-bottom: 1px dotted #ffffff;*/
+  border-bottom: 2px dotted #ffffff;
 }
 .hljs-number {
   color: #6ce6cd;
+}
+.post-container .post .post-info > span {
+  color: rgb(143, 143, 143);
 }
     
