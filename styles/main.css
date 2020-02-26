@@ -1043,4 +1043,8 @@ td {
   color: #90b5ec;
   font-weight: bold;
 }
+.hljs-string,
+.hljs-doctag {
+  color: #e99768;
+}
     
