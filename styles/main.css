@@ -1012,3 +1012,17 @@ td {
         color: #ffec99;
       }
     
+      .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #181e25;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #7e7cb8;
+  font-weight: bold;
+}
+    
