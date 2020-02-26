@@ -1073,7 +1073,7 @@ a:hover {
 }
 .post-detail .post .post-content a:hover {
   color: #ffffff;
-  border-bottom: 2px dotted #ffffff;
+  border-bottom: 1.5px dotted #ffffff;
 }
 .hljs-number {
   color: #6ce6cd;
@@ -1089,5 +1089,10 @@ a:hover {
 }
 .post-detail .post .post-content blockquote:before {
   color: rgba(255, 255, 255, 0.34);
+}
+.post-detail .post .post-content p code,
+.post-detail .post .post-content li code {
+  background-color: #181e25;
+  color: #98d4a0;
 }
     
