@@ -1081,4 +1081,10 @@ a:hover {
 .post-container .post .post-info > span {
   color: rgb(143, 143, 143);
 }
+.post-container .post .post-feature-image {
+  border-radius: 5px;
+}
+.post-container .post .post-feature-image:hover {
+  border-radius: 0px;
+}
     
