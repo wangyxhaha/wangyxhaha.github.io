@@ -1012,7 +1012,15 @@ td {
         color: #ffec99;
       }
     
-      .hljs {
+      .post-detail .post .post-content pre code {
+  font-size: 0.96em;
+  font-family: 'Source Code Pro', Consolas, Menlo, Monaco, 'Courier New', monospace;
+  padding: 1em;
+  border-radius: 5px;
+  line-height: 1.5;
+  color: #fff5f5;
+}
+.hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
