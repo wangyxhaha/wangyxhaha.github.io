@@ -1012,3 +1012,7 @@ td {
         color: #ffec99;
       }
     
+      #live2dcanvas {
+    border: 0 !important;
+}
+    
