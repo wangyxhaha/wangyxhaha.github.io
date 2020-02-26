@@ -1066,10 +1066,10 @@ a:hover {
   letter-spacing: 0.1em;
 }
 .post-detail .post .post-content a {
-  color: #f9d654;
+  color: #6190e8;
   word-wrap: break-word;
   text-decoration: none;
-  border-bottom: 1px solid #f9d654;
+  border-bottom: 1px solid #6190e8;
 }
 .post-detail .post .post-content a:hover {
   color: #ffffff;
@@ -1110,5 +1110,8 @@ a:hover {
 }
 .site-header .menu-container a.menu:hover {
     padding: 8px 16px;
+}
+.next-post .next {
+    color: #ffffff;
 }
     
