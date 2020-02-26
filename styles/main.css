@@ -1055,7 +1055,10 @@ td {
 .hljs-variable {
   color: #e99768;
 }
-a{
+a {
   color: #f9d654;
+  text-decoration: none;
+  transition: all 0.3s;
 }
+
     
