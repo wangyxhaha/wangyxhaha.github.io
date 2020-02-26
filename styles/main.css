@@ -1070,4 +1070,7 @@ a {
   color: #ffffff;
   border-bottom: 1px dotted #ffffff;
 }
+.hljs-number {
+  color: #6ce6cd;
+}
     
