@@ -1056,9 +1056,18 @@ td {
   color: #e99768;
 }
 a {
-  color: #f9d654;
+  color: ;
   text-decoration: none;
   transition: all 0.3s;
 }
-
+.post-detail .post .post-content a {
+  color: #f9d654;
+  word-wrap: break-word;
+  text-decoration: none;
+  border-bottom: 1px solid #f9d654;
+}
+.post-detail .post .post-content a:hover {
+  color: #fdf3ce;
+  border-bottom: 1px dotted #fdf3ce;
+}
     
