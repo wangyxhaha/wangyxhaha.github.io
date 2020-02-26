@@ -1044,7 +1044,9 @@ td {
   font-weight: bold;
 }
 .hljs-string,
-.hljs-doctag {
+.hljs-doctag,
+.hljs-built_in,
+.hljs-builtin-name {
   color: #e99768;
 }
 .hljs-meta-string {
