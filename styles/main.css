@@ -1082,7 +1082,7 @@ a:hover {
   color: rgb(143, 143, 143);
 }
 .post-container .post .post-feature-image {
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .post-container .post .post-feature-image:hover {
   border-radius: 0px;
@@ -1094,5 +1094,21 @@ a:hover {
 .post-detail .post .post-content li code {
   background-color: #181e25;
   color: #98d4a0;
+}
+.site-header .avatar {
+    transition: all 0.3s;
+}
+.site-header .avatar:hover {
+    margin-bottom: 24px;
+    border-radius: 0%;
+    width: 130px;
+    height: 130px;
+    transition: all 0.3s;
+}
+.site-header .menu-container a.menu {
+    padding: 4px 8px;
+}
+.site-header .menu-container a.menu:hover {
+    padding: 8px 16px;
 }
     
