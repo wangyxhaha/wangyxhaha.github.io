@@ -1110,8 +1110,18 @@ a:hover {
 }
 .site-header .menu-container a.menu:hover {
     padding: 8px 16px;
+    color: #6190e8;
 }
 .next-post .next {
     color: #ffffff;
+}
+.next-post a:hover {
+    color: #6190e8;
+}
+.post a:hover {
+    color: #6190e8;
+}
+.site-footer a:hover {
+    color: #6190e8;
 }
     
