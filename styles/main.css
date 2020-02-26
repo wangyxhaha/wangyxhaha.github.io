@@ -976,16 +976,16 @@ td {
 }
 
       .post-container .post .post-title {
-        text-align: center;
+        text-align: left;
       }
       .post-container .post .post-info {
-        text-align: center;
+        text-align: left;
       }
       .post-detail .post .post-title {
-        text-align: center;
+        text-align: left;
       }
       .post-detail .post .post-info {
-        text-align: center;
+        text-align: left;
       }
     
       body {
@@ -1011,8 +1011,4 @@ td {
       a:hover {
         color: #ffec99;
       }
-    
-      #live2dcanvas {
-    border: 0 !important;
-}
     
