@@ -2,26 +2,21 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>插入排序 | WangYXHaHa</title>
+<title>Nazo第三关 | WangYXHaHa</title>
 <link rel="shortcut icon" href="https://wangyxhaha.github.io/favicon.ico?v=1582804330379">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://wangyxhaha.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="插入排序 | WangYXHaHa - Atom Feed" href="https://wangyxhaha.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Nazo第三关 | WangYXHaHa - Atom Feed" href="https://wangyxhaha.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="很常用的一种排序
-#include &lt;iostream&gt;
-using namespace std;
-
-int a[10000];
-
-int main(){
-    int n;
-    cin &gt;&gt; n;
-    f..." />
-    <meta name="keywords" content="排序,算法" />
+    <meta name="description" content="namerena
+ABC
+BCA
+CBA
+" />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -93,59 +88,24 @@ int main(){
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              插入排序
+              Nazo第三关
             </h2>
             <div class="post-info">
               <span>
-                2020-02-25
+                2020-02-27
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
-              
-                <a href="https://wangyxhaha.github.io/tag/sort/" class="post-tag">
-                  # 排序
-                </a>
-              
-                <a href="https://wangyxhaha.github.io/tag/algorithms/" class="post-tag">
-                  # 算法
-                </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=2dc70659533d26973ade000f3492d99e/bd315c6034a85edf009ac5b04b540923dd54750a.jpg" alt="">
-            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>很常用的一种排序</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-using namespace std;
-
-int a[10000];
-
-int main(){
-    int n;
-    cin &gt;&gt; n;
-    for (int i=0;i&lt;n;i++){
-        cin &gt;&gt; a[i];
-    }
-    int t,j; //t储存当前取到的项的值，j储存当前比较到的项的项数
-    for (int i=1;i&lt;n;i++){ //第一个默认有序，所以从第二个开始
-        t=a[i]; //赋值
-        j=i; //赋值
-        while (j&gt;0 &amp;&amp; a[j-1]&gt;t){ //while循环向前遍历：如果当前比较到的
-            a[j]=a[j-1];         //项的前一项比当前比较到的项大，那么
-            j--;                 //前一项的值移至当前项，并当前比较到的项
-        }                        //的项数向前移；j若到0或找到前一项
-        a[j]=t;                  //小于等于当前比较到的项，跳出循环
-    }                            //并给当前比较到的项赋值为t
-    for (int i=0;i&lt;n;i++){
-        cout &lt;&lt; a[i] &lt;&lt; ' ';
-    }
-    cout &lt;&lt; endl;
-    return 0;
-}
-</code></pre>
+                <p>namerena</p>
+<p>ABC<br>
+BCA<br>
+CBA</p>
 
               </div>
               <div class="toc-container">
@@ -155,15 +115,6 @@ int main(){
           </article>
         </div>
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://wangyxhaha.github.io/post/hello-gridea/">
-              <h3 class="post-title">
-                Hello Gridea
-              </h3>
-            </a>
-          </div>
         
 
         
