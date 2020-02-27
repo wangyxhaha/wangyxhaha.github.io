@@ -1083,7 +1083,7 @@ a:hover {
 }
 .post-container .post .post-feature-image {
   border-radius: 10px;
-  box-shadow: 10px 10px 10px #888888;
+  box-shadow: 0px 0px 10px #888888;
 }
 .post-container .post .post-feature-image:hover {
   border-radius: 0px;
