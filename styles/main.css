@@ -993,15 +993,15 @@ td {
       }
     
       .main {
-        background: #343a40;
+        background: rgba(255,255,255,0.4);
       }
     
       body {
-        background: #343a40;
+        background: linear-gradient(to bottom right,#e66465, #9198e5);
       }
     
       body {
-        color: #f8f9fa;
+        color: #212529;
       }
     
       a {
@@ -1009,7 +1009,7 @@ td {
       }
     
       a:hover {
-        color: #ffec99;
+        color: #6190e8;
       }
     
       .post-detail .post .post-content pre code {
@@ -1078,9 +1078,6 @@ a:hover {
 .hljs-number {
   color: #6ce6cd;
 }
-.post-container .post .post-info > span {
-  color: rgb(143, 143, 143);
-}
 .post-container .post .post-feature-image {
   border-radius: 10px;
   box-shadow: 0px 0px 10px #888888;
@@ -1126,9 +1123,25 @@ a:hover {
     color: #6190e8;
 }
 .site-header .site-description {
-    color: #a2a2a2;
+    color: #ffffff;
+}
+.post-detail .post .post-content hr:before {
+    color: rgba(255, 255, 255, 0.2);
 }
 body{cursor:url('./cursor.cur'),default;}
 a:hover{cursor:url('./pointer.cur'),pointer;}
 
+.post-detail .post .post-content blockquote {
+    color: #5c6874;
+}
+.toc-container li a {
+  color: rgba(0, 0, 0, 0.98);
+}
+
+/* .post-title {
+    color: #f8f9fa;
+}
+.post-title h2:hover{
+  color: #6190e8;
+} */
     
