@@ -1,0 +1,519 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>小游戏：感染模拟 | WangYXHaHa</title>
+<link rel="shortcut icon" href="https://wangyxhaha.github.io/favicon.ico?v=1588342424482">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wangyxhaha.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="小游戏：感染模拟 | WangYXHaHa - Atom Feed" href="https://wangyxhaha.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="由于疫情的爆发，准备写一个模拟传染的游戏
+但是又玩了《the walking dead》，所以将传染病改为僵尸病毒 婷哥NB！
+这个程序由C++编写，使用EGE图形库
+基础规则
+地图分为三种颜色
+灰色表示无人区（也没有僵尸）
+绿色表示人类聚..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wangyxhaha.github.io">
+  <img class="avatar" src="https://wangyxhaha.github.io/images/avatar.png?v=1588342424482" alt="">
+  </a>
+  <h1 class="site-title">
+    WangYXHaHa
+  </h1>
+  <p class="site-description">
+    emmmm
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/nazo" class="menu">
+          my_Nazo
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="http://github.com/wangyxhaha" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              小游戏：感染模拟
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-05-01
+              </span>
+              <span>
+                9 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>由于疫情的爆发，准备写一个模拟传染的游戏</p>
+<p>但是又玩了《the walking dead》，所以将传染病改为僵尸病毒 <s>婷哥NB！</s></p>
+<p>这个程序由C++编写，使用EGE图形库</p>
+<h3 id="基础规则">基础规则</h3>
+<p>地图分为三种颜色</p>
+<p>灰色表示无人区（也没有僵尸）</p>
+<p>绿色表示人类聚集点</p>
+<p>红色表示僵尸聚集点</p>
+<p>人类规则：</p>
+<ol>
+<li>不会主动向僵尸移动</li>
+<li>繁荣度大于危险值时会定居</li>
+<li>繁荣度小于危险值时会移动</li>
+<li>若两个相邻的人类聚集点的繁荣度和小于1000，则两人类聚集点合并</li>
+<li>若两个相邻的人类聚集点的繁荣度和大于1000，则两人类聚集点不会移动</li>
+<li>繁荣度会不断增加</li>
+<li>若繁荣度大于1000，会用大于1000的部分在四周的无人区上生成新的人类聚集点</li>
+<li>若繁荣度大于1000，且四周没有无人区，则不生成新的人类聚集点，且繁荣度不再增加</li>
+</ol>
+<p>僵尸规则：</p>
+<ol>
+<li>随意移动</li>
+<li>若有相邻的人类聚集点会发起攻击
+<ul>
+<li>人类战斗力为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">繁荣度</mtext><mo>×</mo><mo>(</mo><mtext mathvariant="monospace">警惕度</mtext><mo>+</mo><mtext mathvariant="monospace">经验</mtext><mo>+</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\texttt{繁荣度} \times (\texttt{警惕度}+\texttt{经验}+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944400000000001em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord texttt cjk_fallback">繁荣度</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord text"><span class="mord texttt cjk_fallback">警惕度</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.6944400000000001em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord texttt cjk_fallback">经验</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>僵尸战斗力为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">僵尸繁荣度</mtext><mo>+</mo><mi>min</mi><mo>⁡</mo><mo>[</mo><mtext mathvariant="monospace">人类繁荣度</mtext><mo separator="true">,</mo><mtext mathvariant="monospace">僵尸繁荣度</mtext><mo>]</mo><mo>×</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\texttt{僵尸繁荣度}+\min[\texttt{人类繁荣度},\texttt{僵尸繁荣度}] \times 0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944400000000001em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord texttt cjk_fallback">僵尸繁荣度</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">min</span><span class="mopen">[</span><span class="mord text"><span class="mord texttt cjk_fallback">人类繁荣度</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord texttt cjk_fallback">僵尸繁荣度</span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span></li>
+<li>战斗力大者胜，并将战斗力差作为繁荣度</li>
+<li>若战斗力相等，则同归于尽</li>
+</ul>
+</li>
+<li>若繁荣度大于1000，会用大于1000的部分在四周的无人区上生成新的僵尸聚集点</li>
+<li>若繁荣度大于1000，且四周没有无人区，则不生成新的僵尸聚集点，且繁荣度不再增加</li>
+</ol>
+<p>人类繁荣度规则：</p>
+<ol>
+<li>随机初始</li>
+<li>每一回合加10</li>
+</ol>
+<p>僵尸繁荣度规则：</p>
+<ol>
+<li>初始僵尸聚集地繁荣度为1000</li>
+<li>不会增加</li>
+</ol>
+<p>警惕度规则：</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">警惕度</mtext><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mtext mathvariant="monospace">现有人类聚集地数</mtext><mtext mathvariant="monospace">原有人类聚集地数</mtext></mfrac></mrow><annotation encoding="application/x-tex">\texttt{警惕度}=1-{\texttt{现有人类聚集地数}\over\texttt{原有人类聚集地数}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt cjk_fallback">警惕度</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.166777em;vertical-align:-0.345em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.821777em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord texttt cjk_fallback mtight">原有人类聚集地数</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord texttt cjk_fallback mtight">现有人类聚集地数</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></li>
+</ol>
+<p>危险值规则：</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">危险值</mtext><mo>=</mo><mtext mathvariant="monospace">警惕度</mtext><mo>×</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">\texttt{危险值}=\texttt{警惕度} \times 1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt cjk_fallback">危险值</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.6944400000000001em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord texttt cjk_fallback">警惕度</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></li>
+</ol>
+<p>经验规则：</p>
+<ol>
+<li>初始为0</li>
+<li>每一回合增加 0.001</li>
+</ol>
+<h3 id="代码">代码</h3>
+<pre><code class="language-cpp">/*
+epidemic
+made by: wangyxhaha
+-lgraphics64 -lgdi32 -limm32 -lmsimg32 -lole32 -loleaut32 -lwinmm -luuid
+*/
+#include &lt;bits/stdc++.h&gt;
+#include &lt;graphics.h&gt;
+using namespace std;
+
+struct block{
+    int type;//0 null,1 human,2 zombie
+    int v;
+}world_map[500][500];
+
+struct xy{
+    int x,y;
+};
+
+int color[3]={0x696969,0x32CD32,0xB22222};
+int dx[]={-1,0,1,0},
+    dy[]={0,1,0,-1};
+int human_at_first,danger;
+double careful,ex;
+
+void map_init(int seed){
+    srand(seed);
+    human_at_first=0;
+    for (int i=0;i&lt;500;i++){
+        for (int j=0;j&lt;500;j++){
+            if (rand()%10==9) world_map[i][j].type=1,world_map[i][j].v=rand()%1000,human_at_first++;
+            else world_map[i][j].type=0,world_map[i][j].v=0;
+        }
+    }
+    int zx=rand()%500,zy=rand()%500;
+    world_map[zx][zy].type=2,world_map[zx][zy].v=1000;
+    return;
+}
+
+void draw_map(){
+    color_t* buff = getbuffer(NULL);
+    for (int i=0;i&lt;500;i++){
+        for (int j=0;j&lt;500;j++){
+            buff[i+j*500]=color[world_map[i][j].type];
+        }
+    }
+}
+
+void move(){
+    int human_now=0;
+    for (int i=0;i&lt;500;i++){
+        for (int j=0;j&lt;500;j++){
+            if (world_map[i][j].type==1) human_now++;
+        }
+    }
+    careful=1.0-((double)(human_now)/(double)(human_at_first));
+    danger=1000*careful;
+//    danger=1000;
+    for (int i=0;i&lt;500;i++){ //human
+        for (int j=0;j&lt;500;j++){
+            if (world_map[i][j].type==1){
+                world_map[i][j].v+=10;
+                if (world_map[i][j].v&gt;1000){
+                    bool m=0;
+                    for (int k=0;k&lt;4;k++){
+                        int t1=i+dx[k],t2=j+dy[k];
+                        if (t1&gt;=0 &amp;&amp; t1&lt;500 &amp;&amp; t2&gt;=0 &amp;&amp; t2&lt;500){
+                            if (world_map[t1][t2].type==0){
+                                m=1;
+                                break;
+                            }
+                        }
+                    }
+                    if (m){
+                        while (1){
+                            int go=rand()%4;
+                            int t1=i+dx[go],t2=j+dy[go];
+                            if (t1&gt;=0 &amp;&amp; t1&lt;500 &amp;&amp; t2&gt;=0 &amp;&amp; t2&lt;500){
+                                if (world_map[t1][t2].type==0){
+                                    world_map[t1][t2].type=1;
+                                    world_map[t1][t2].v=world_map[i][j].v-1000;
+                                    world_map[i][j].v=1000;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else world_map[i][j].v=1000;
+                    continue;
+                }
+                if (world_map[i][j].v&gt;danger) continue;
+                bool alone=0;
+                for (int k=0;k&lt;4;k++){
+                    int t1=i+dx[k],t2=j+dy[k];
+                    if (t1&gt;=0 &amp;&amp; t1&lt;500 &amp;&amp; t2&gt;=0 &amp;&amp; t2&lt;500){
+                        if (world_map[t1][t2].type==1){
+                            alone=1;
+                            if (world_map[i][j].v+world_map[t1][t2].v&lt;1000){
+                                world_map[t1][t2].v+=world_map[i][j].v;
+                                world_map[i][j].type=0;
+                            }
+                            break;
+                        }
+                    }
+                }
+                if (!alone){
+                    bool m=0;
+                    for (int k=0;k&lt;4;k++){
+                        int t1=i+dx[k],t2=j+dy[k];
+                        if (t1&gt;=0 &amp;&amp; t1&lt;500 &amp;&amp; t2&gt;=0 &amp;&amp; t2&lt;500){
+                            if (world_map[t1][t2].type==0){
+                                m=1;
+                                break;
+                            }
+                        }
+                    }
+                    if (m){
+                        while (1){
+                            int go=rand()%4;
+                            int t1=i+dx[go],t2=j+dy[go];
+                            if (t1&gt;=0 &amp;&amp; t1&lt;500 &amp;&amp; t2&gt;=0 &amp;&amp; t2&lt;500){
+                                if (world_map[t1][t2].type==0){
+                                    world_map[t1][t2]=world_map[i][j];
+                                    world_map[i][j].type=0;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    for (int i=0;i&lt;500;i++){ //zombie
+        for (int j=0;j&lt;500;j++){
+            if (world_map[i][j].type==2){
+                if (world_map[i][j].v&gt;1000){
+                    bool m=0;
+                    for (int k=0;k&lt;4;k++){
+                        int t1=i+dx[k],t2=j+dy[k];
+                        if (t1&gt;=0 &amp;&amp; t1&lt;500 &amp;&amp; t2&gt;=0 &amp;&amp; t2&lt;500){
+                            if (world_map[t1][t2].type==0){
+                                m=1;
+                                break;
+                            }
+                        }
+                    }
+                    if (m){
+                        while (1){
+                            int go=rand()%4;
+                            int t1=i+dx[go],t2=j+dy[go];
+                            if (t1&gt;=0 &amp;&amp; t1&lt;500 &amp;&amp; t2&gt;=0 &amp;&amp; t2&lt;500){
+                                if (world_map[t1][t2].type==0){
+                                    world_map[t1][t2].type=2;
+                                    world_map[t1][t2].v=world_map[i][j].v-1000;
+                                    world_map[i][j].v=1000;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else world_map[i][j].v=1000;
+                }
+                bool alone=0;
+                for (int k=0;k&lt;4;k++){
+                    int t1=i+dx[k],t2=j+dy[k];
+                    if (t1&gt;=0 &amp;&amp; t1&lt;500 &amp;&amp; t2&gt;=0 &amp;&amp; t2&lt;500){
+                        if (world_map[t1][t2].type==1){
+                            alone=1;
+                            if (world_map[t1][t2].v*(careful+1+ex)&lt;world_map[i][j].v+min(world_map[i][j].v,world_map[t1][t2].v)*0.9){
+                                world_map[t1][t2].type=2;
+                                world_map[t1][t2].v=world_map[i][j].v+min(world_map[i][j].v,world_map[t1][t2].v)*0.9-world_map[t1][t2].v*(careful+1+ex);
+                                world_map[i][j].type=0;
+                            }
+                            else if (world_map[t1][t2].v*(careful+1+ex)&gt;world_map[i][j].v+min(world_map[i][j].v,world_map[t1][t2].v)*0.9){
+                                world_map[i][j].type=0;
+                                world_map[t1][t2].v=world_map[t1][t2].v*(careful+1+ex)-world_map[i][j].v+min(world_map[i][j].v,world_map[t1][t2].v)*0.9;
+                            }
+                            else{
+                                world_map[i][j].type=0;
+                                world_map[t1][t2].type=0;
+                            }
+                            break;
+                        }
+                    }
+                }
+                if (!alone){
+                    bool m=0;
+                    for (int k=0;k&lt;4;k++){
+                        int t1=i+dx[k],t2=j+dy[k];
+                        if (t1&gt;=0 &amp;&amp; t1&lt;500 &amp;&amp; t2&gt;=0 &amp;&amp; t2&lt;500){
+                            if (world_map[t1][t2].type==0){
+                                m=1;
+                                break;
+                            }
+                        }
+                    }
+                    if (m){
+                        while (1){
+                            int go=rand()%4;
+                            int t1=i+dx[go],t2=j+dy[go];
+                            if (t1&gt;=0 &amp;&amp; t1&lt;500 &amp;&amp; t2&gt;=0 &amp;&amp; t2&lt;500){
+                                if (world_map[t1][t2].type==0){
+                                    world_map[t1][t2]=world_map[i][j];
+                                    world_map[i][j].type=0;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+void main_loop(){
+    for (;is_run();delay_fps(500)){
+        draw_map();
+        move();
+        ex+=0.001;
+//        cout &lt;&lt; &quot;flush&quot; &lt;&lt; endl;
+	}
+}
+
+int main(){
+    int seed;
+    cout &lt;&lt; &quot;seed:&quot;;
+    cin &gt;&gt; seed;
+    map_init(seed);
+    cout &lt;&lt; 1 &lt;&lt; endl;
+    initgraph(500,500,0);
+    main_loop();
+    closegraph();
+    return 0;
+}
+</code></pre>
+<p>注意事项：</p>
+<ol>
+<li>seed请输入int型整数</li>
+<li>由于使用的是C++库自带的垃圾随机函数，所以会出现一些诡异的现象</li>
+<li>EGE库请自行配置</li>
+<li>文件开始写了需要什么编译指令</li>
+</ol>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%9F%BA%E7%A1%80%E8%A7%84%E5%88%99">基础规则</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wangyxhaha.github.io/post/lin-jie-biao/">
+              <h3 class="post-title">
+                学习：数据结构——邻接表
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'da88db8fbb57febac699',
+    clientSecret: '48353c8f7e5361a6f08b5854831d76c1ce0df986',
+    repo: 'wangyxhaha.github.io',
+    owner: 'wangyxhaha',
+    admin: ['wangyxhaha'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+     My <a href="https://123haha.blog.luogu.org/">luogu blog</a> </p>
+  <a class="rss" href="https://wangyxhaha.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
